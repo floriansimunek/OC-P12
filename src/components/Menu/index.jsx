@@ -1,22 +1,15 @@
 import styles from "./Menu.module.scss";
-import { Link } from "react-router-dom";
+import MenuItem from "../MenuItem";
 
-export default function Menu() {
+export default function Menu({ icons }) {
 	return (
 		<aside className={styles.menu}>
 			<ul className={styles.nav}>
-				<li className={styles.nav_item}>
-					<Link to="#" className={styles.nav_item_link}></Link>
-				</li>
-				<li className={styles.nav_item}>
-					<Link to="#" className={styles.nav_item_link}></Link>
-				</li>
-				<li className={styles.nav_item}>
-					<Link to="#" className={styles.nav_item_link}></Link>
-				</li>
-				<li className={styles.nav_item}>
-					<Link to="#" className={styles.nav_item_link}></Link>
-				</li>
+				{icons.map((icon, k) => (
+					<li className={styles.nav_item} key={k}>
+						<MenuItem icon={icon} />
+					</li>
+				))}
 			</ul>
 		</aside>
 	);
