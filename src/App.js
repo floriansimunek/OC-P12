@@ -1,5 +1,9 @@
+/* COMPONENTS */
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Hello from "./components/Hello";
+
+/* ICONS */
 import yogaIcon from "./assets/icons/yoga.svg";
 import swimIcon from "./assets/icons/swimming.svg";
 import bikeIcon from "./assets/icons/bike.svg";
@@ -12,6 +16,7 @@ export default function App() {
 		<>
 			<Header />
 			<Menu icons={ICONS} />
+			{/* <Hello /> */}
 		</>
 	);
 }
