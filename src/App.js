@@ -2,6 +2,7 @@
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Hello from "./components/Hello";
+import Card from "./components/Card";
 
 /* ICONS */
 import yogaIcon from "./assets/icons/yoga.svg";
@@ -17,6 +18,7 @@ export default function App() {
 			<Header />
 			<Menu icons={ICONS} />
 			{/* <Hello /> */}
+			<Card />
 		</>
 	);
 }
