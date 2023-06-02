@@ -1,19 +1,20 @@
 import styles from "./Card.module.scss";
-import energyIcon from "../../assets/icons/energy.svg";
-import chickenIcon from "../../assets/icons/chicken.svg";
-import appleIcon from "../../assets/icons/apple.svg";
-import cheeseburgerIcon from "../../assets/icons/cheeseburger.svg";
+import { ReactComponent as EnergyIcon } from "../../assets/icons/energy.svg";
+import { ReactComponent as ChickenIcon } from "../../assets/icons/chicken.svg";
+import { ReactComponent as AppleIcon } from "../../assets/icons/apple.svg";
+import { ReactComponent as CheeseburgerIcon } from "../../assets/icons/cheeseburger.svg";
 
 const iconMap = {
-	energy: energyIcon,
-	chicken: chickenIcon,
-	apple: appleIcon,
-	cheeseburger: cheeseburgerIcon,
+	energy: <EnergyIcon />,
+	chicken: <ChickenIcon />,
+	apple: <AppleIcon />,
+	cheeseburger: <CheeseburgerIcon />,
 };
 
 export default function Card({ card }) {
 	const cardStyle = {
-		"--card-iconBlock-color": card.color,
+		"--card-iconBlock-color": card.color + "10",
+		"--card-icon-color": card.color,
 	};
 
 	const icon = iconMap[card.type] || null;
@@ -21,7 +22,7 @@ export default function Card({ card }) {
 	return (
 		<div className={styles.card}>
 			<div className={styles.iconBlock} style={cardStyle}>
-				{icon && <img src={icon} className={styles.icon} alt="Energy icon" />}
+				{icon}
 			</div>
 			<div className={styles.data}>
 				<div className={styles.number}>{`${card.number}${card.unity}`}</div>

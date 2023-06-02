@@ -17,28 +17,28 @@ const CARDS = [
 		number: "1,930",
 		unity: "kCal",
 		name: "Calories",
-		color: "#ff000010",
+		color: "#ff0000",
 	},
 	{
 		type: "chicken",
 		number: "155",
 		unity: "g",
 		name: "Proteines",
-		color: "#4ab8ff10",
+		color: "#4ab8ff",
 	},
 	{
 		type: "apple",
 		number: "290",
 		unity: "g",
 		name: "Glucides",
-		color: "#fdcc0c10",
+		color: "#fdcc0c",
 	},
 	{
 		type: "cheeseburger",
 		number: "50",
 		unity: "g",
 		name: "Lipides",
-		color: "#fd518110",
+		color: "#fd5181",
 	},
 ];
 
