@@ -2,7 +2,7 @@
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Hello from "./components/Hello";
-import Card from "./components/Card";
+import CardsList from "./components/CardsList";
 
 /* ICONS */
 import yogaIcon from "./assets/icons/yoga.svg";
@@ -11,6 +11,36 @@ import bikeIcon from "./assets/icons/bike.svg";
 import bodyIcon from "./assets/icons/bodybuilding.svg";
 
 const ICONS = [yogaIcon, swimIcon, bikeIcon, bodyIcon];
+const CARDS = [
+	{
+		type: "energy",
+		number: "1,930",
+		unity: "kCal",
+		name: "Calories",
+		color: "#ff000010",
+	},
+	{
+		type: "chicken",
+		number: "155",
+		unity: "g",
+		name: "Proteines",
+		color: "#4ab8ff10",
+	},
+	{
+		type: "apple",
+		number: "290",
+		unity: "g",
+		name: "Glucides",
+		color: "#fdcc0c10",
+	},
+	{
+		type: "cheeseburger",
+		number: "50",
+		unity: "g",
+		name: "Lipides",
+		color: "#fd518110",
+	},
+];
 
 export default function App() {
 	return (
@@ -18,7 +48,7 @@ export default function App() {
 			<Header />
 			<Menu icons={ICONS} />
 			{/* <Hello /> */}
-			<Card />
+			{/* <CardsList cards={CARDS} /> */}
 		</>
 	);
 }
