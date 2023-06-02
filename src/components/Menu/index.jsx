@@ -11,6 +11,7 @@ export default function Menu({ icons }) {
 					</li>
 				))}
 			</ul>
+			<p className={styles.copyright}>Copyright, SportSee 2020</p>
 		</aside>
 	);
 }

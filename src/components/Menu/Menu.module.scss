@@ -3,8 +3,10 @@
 	width: 115px;
 	height: calc(100vh - 90px);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 
 	.nav {
 		display: flex;
@@ -18,6 +20,21 @@
 			height: 64px;
 			background-color: white;
 			border-radius: 6px;
+		}
+	}
+
+	.copyright {
+		position: absolute;
+		bottom: 100px;
+		white-space: nowrap;
+		color: white;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 24px;
+		transform: rotate(-90deg);
+
+		@media screen and (max-width: 1024px) {
+			bottom: 75px;
 		}
 	}
 }
