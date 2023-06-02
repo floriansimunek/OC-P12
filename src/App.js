@@ -5,10 +5,10 @@ import Hello from "./components/Hello";
 import CardsList from "./components/CardsList";
 
 /* ICONS */
-import yogaIcon from "./assets/icons/yoga.svg";
-import swimIcon from "./assets/icons/swimming.svg";
-import bikeIcon from "./assets/icons/bike.svg";
-import bodyIcon from "./assets/icons/bodybuilding.svg";
+import yogaIcon from "./assets/icons/activities/yoga.svg";
+import swimIcon from "./assets/icons/activities/swimming.svg";
+import bikeIcon from "./assets/icons/activities/bike.svg";
+import bodyIcon from "./assets/icons/activities/bodybuilding.svg";
 
 const ICONS = [yogaIcon, swimIcon, bikeIcon, bodyIcon];
 const CARDS = [
