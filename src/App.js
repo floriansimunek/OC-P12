@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Hello from "./components/Hello";
 import CardsList from "./components/CardsList";
+import PieChart from "./components/Charts/Pie";
 
 /* ICONS */
 import yogaIcon from "./assets/icons/activities/yoga.svg";
@@ -47,6 +48,7 @@ export default function App() {
 		<>
 			<Header />
 			<Menu icons={ICONS} />
+			{/* <PieChart /> */}
 			{/* <Hello /> */}
 			{/* <CardsList cards={CARDS} /> */}
 		</>
