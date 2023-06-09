@@ -4,6 +4,7 @@ import Menu from "./components/Menu";
 import Hello from "./components/Hello";
 import CardsList from "./components/CardsList";
 import PieChart from "./components/Charts/Pie";
+import RadarChart from "./components/Charts/Radar";
 
 /* ICONS */
 import yogaIcon from "./assets/icons/activities/yoga.svg";
@@ -48,6 +49,7 @@ export default function App() {
 		<>
 			<Header />
 			<Menu icons={ICONS} />
+			{/* <RadarChart /> */}
 			{/* <PieChart /> */}
 			{/* <Hello /> */}
 			{/* <CardsList cards={CARDS} /> */}
