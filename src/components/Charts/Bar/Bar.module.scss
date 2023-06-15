@@ -1,0 +1,33 @@
+.chart {
+	background: #fbfbfb;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+	border-radius: 5px;
+
+	.tooltip {
+		background-color: red;
+		padding: 10px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 300%;
+		color: white;
+	}
+
+	.XAxisText {
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 200%;
+		fill: #9b9eac;
+	}
+
+	.title {
+		font-weight: 500;
+		font-size: 15px;
+		line-height: 200%;
+	}
+
+	.legend {
+		color: #74798c;
+		font-weight: 500;
+		font-size: 14px;
+	}
+}

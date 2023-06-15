@@ -6,12 +6,14 @@ import CardsList from "./components/CardsList";
 import PieChart from "./components/Charts/Pie";
 import RadarChart from "./components/Charts/Radar";
 import LineChart from "./components/Charts/Line";
+import BarChart from "./components/Charts/Bar";
 
 /* ICONS */
 import yogaIcon from "./assets/icons/activities/yoga.svg";
 import swimIcon from "./assets/icons/activities/swimming.svg";
 import bikeIcon from "./assets/icons/activities/bike.svg";
 import bodyIcon from "./assets/icons/activities/bodybuilding.svg";
+import { Bar } from "recharts";
 
 const ICONS = [yogaIcon, swimIcon, bikeIcon, bodyIcon];
 const CARDS = [
@@ -50,6 +52,7 @@ export default function App() {
 		<>
 			<Header />
 			<Menu icons={ICONS} />
+			{/* <BarChart /> */}
 			{/* <LineChart /> */}
 			{/* <RadarChart /> */}
 			{/* <PieChart /> */}
