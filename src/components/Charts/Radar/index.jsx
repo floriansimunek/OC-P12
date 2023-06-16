@@ -2,39 +2,6 @@ import React, { PureComponent } from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts";
 import styles from "./Radar.module.scss";
 
-const data = [
-	{
-		subject: "Intensité",
-		A: 35,
-		fullMark: 100,
-	},
-	{
-		subject: "Vitesse",
-		A: 98,
-		fullMark: 100,
-	},
-	{
-		subject: "Force",
-		A: 70,
-		fullMark: 100,
-	},
-	{
-		subject: "Endurance",
-		A: 85,
-		fullMark: 100,
-	},
-	{
-		subject: "Energie",
-		A: 85,
-		fullMark: 100,
-	},
-	{
-		subject: "Cardio",
-		A: 50,
-		fullMark: 100,
-	},
-];
-
 export default class Example extends PureComponent {
 	customTick({ payload, x, y, cx, cy, textAnchor, stroke, radius }) {
 		return (
@@ -45,7 +12,7 @@ export default class Example extends PureComponent {
 					y={y + (y - cy) / 10}
 					x={x + (x - cx) / 10}
 					className="recharts-text recharts-polar-angle-axis-tick-value"
-					text-anchor={textAnchor}
+					textAnchor={textAnchor}
 				>
 					<tspan className={styles.axis} x={x} dy="0em">
 						{payload.value}
@@ -56,6 +23,41 @@ export default class Example extends PureComponent {
 	}
 
 	render() {
+		const { userPerformance } = this.props;
+
+		const data = [
+			{
+				subject: "Intensité",
+				A: userPerformance.data[5].value,
+				fullMark: 100,
+			},
+			{
+				subject: "Vitesse",
+				A: userPerformance.data[4].value,
+				fullMark: 100,
+			},
+			{
+				subject: "Force",
+				A: userPerformance.data[3].value,
+				fullMark: 100,
+			},
+			{
+				subject: "Endurance",
+				A: userPerformance.data[2].value,
+				fullMark: 100,
+			},
+			{
+				subject: "Energie",
+				A: userPerformance.data[1].value,
+				fullMark: 100,
+			},
+			{
+				subject: "Cardio",
+				A: userPerformance.data[0].value,
+				fullMark: 100,
+			},
+		];
+
 		return (
 			<div className={styles.chart}>
 				<ResponsiveContainer width="100%" height="100%">

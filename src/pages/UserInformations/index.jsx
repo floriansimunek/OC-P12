@@ -8,6 +8,7 @@ import CardsList from "../../components/CardsList";
 import PieChart from "../../components/Charts/Pie";
 import BarChart from "../../components/Charts/Bar";
 import LineChart from "../../components/Charts/Line";
+import RadarChart from "../../components/Charts/Radar";
 
 /* API */
 import Api from "../../utils/Api";
@@ -19,6 +20,7 @@ export default function UserInformations() {
 	const [userData, setUserData] = useState(null);
 	const [userDataActivity, setUserDataActivity] = useState(null);
 	const [userAverageSessions, setUserAverageSessions] = useState(null);
+	const [userPerformance, setUserPerformance] = useState(null);
 
 	useEffect(() => {
 		async function fetchData() {
@@ -26,10 +28,11 @@ export default function UserInformations() {
 				const userData = await API.getUserData(userID);
 				const userActivity = await API.getUserActivity(userID);
 				const userAverageSessions = await API.getUserAverageSessions(userID);
+				const userPerformance = await API.getUserPerformance(userID);
 				setUserData(userData);
 				setUserDataActivity(userActivity);
-				console.log(userAverageSessions);
 				setUserAverageSessions(userAverageSessions);
+				setUserPerformance(userPerformance);
 			} catch (error) {
 				console.error(error);
 			}
@@ -79,6 +82,7 @@ export default function UserInformations() {
 						<PieChart score={userData.todayScore || userData.score} />
 						<BarChart userDataActivity={userDataActivity} />
 						<LineChart userAverageSessions={userAverageSessions} />
+						<RadarChart userPerformance={userPerformance} />
 					</div>
 				</div>
 			)}
