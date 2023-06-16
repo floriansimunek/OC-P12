@@ -3,7 +3,7 @@ export default class Api {
 		this.baseUrl = "http://localhost:1234";
 	}
 
-	async getUser(userId) {
+	async getUserData(userId) {
 		const url = `${this.baseUrl}/user/${userId}`;
 		const response = await fetch(url);
 		const data = await response.json();
