@@ -27,4 +27,20 @@ export default class Api {
 	getAge() {
 		return this.userData.userInfos.age;
 	}
+
+	getUserCalorieCount() {
+		return this.userData.keyData.calorieCount;
+	}
+
+	getUserCarbohydrateCount() {
+		return this.userData.keyData.carbohydrateCount;
+	}
+
+	getLipidCount() {
+		return this.userData.keyData.lipidCount;
+	}
+
+	getProteinCount() {
+		return this.userData.keyData.proteinCount;
+	}
 }
