@@ -8,6 +8,9 @@ import RadarChart from "./components/Charts/Radar";
 import LineChart from "./components/Charts/Line";
 import BarChart from "./components/Charts/Bar";
 
+/* API */
+import Api from "./utils/Api";
+
 /* ICONS */
 import yogaIcon from "./assets/icons/activities/yoga.svg";
 import swimIcon from "./assets/icons/activities/swimming.svg";
@@ -46,6 +49,8 @@ const CARDS = [
 		color: "#fd5181",
 	},
 ];
+
+const API = new Api();
 
 export default function App() {
 	return (
