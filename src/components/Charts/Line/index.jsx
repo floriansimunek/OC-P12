@@ -55,48 +55,19 @@ const CustomCursor = ({ points, width }) => {
 export default class Example extends PureComponent {
 	render() {
 		const { userAverageSessions } = this.props;
-		const data = [
-			{
-				day: null,
-				time:
-					userAverageSessions.sessions[0].sessionLength +
-					(userAverageSessions.sessions[1].sessionLength - userAverageSessions.sessions[0].sessionLength) / 2,
-			},
-			{
-				day: "L",
-				time: userAverageSessions.sessions[0].sessionLength,
-			},
-			{
-				day: "M",
-				time: userAverageSessions.sessions[1].sessionLength,
-			},
-			{
-				day: "M",
-				time: userAverageSessions.sessions[2].sessionLength,
-			},
-			{
-				day: "J",
-				time: userAverageSessions.sessions[3].sessionLength,
-			},
-			{
-				day: "V",
-				time: userAverageSessions.sessions[4].sessionLength,
-			},
-			{
-				day: "S",
-				time: userAverageSessions.sessions[5].sessionLength,
-			},
-			{
-				day: "D",
-				time: userAverageSessions.sessions[6].sessionLength,
-			},
-			{
-				day: null,
-				time:
-					userAverageSessions.sessions[6].sessionLength +
-					(userAverageSessions.sessions[5].sessionLength - userAverageSessions.sessions[6].sessionLength) / 2,
-			},
-		];
+
+		const parsedDatas = userAverageSessions.sessions.map((session) => session.sessionLength);
+		const daysOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
+
+		const data = daysOfWeek.map((day, index) => ({
+			day,
+			time: parsedDatas[index],
+		}));
+
+		const [monday, tuesday, , , , saturday, sunday] = data;
+
+		data.unshift({ day: null, time: monday.time + (tuesday.time - monday.time) / 2 });
+		data.push({ day: null, time: saturday.time + (sunday.time - saturday.time) / 2 });
 
 		return (
 			<LineChart width={260} height={260} data={data} className={styles.chart} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
