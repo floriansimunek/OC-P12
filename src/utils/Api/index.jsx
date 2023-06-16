@@ -11,4 +11,8 @@ export default class Api {
 		console.log(data.data);
 		this.userData = data.data;
 	}
+
+	getTodayScore() {
+		return this.userData.todayScore * 100;
+	}
 }
