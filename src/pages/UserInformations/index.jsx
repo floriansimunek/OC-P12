@@ -6,6 +6,7 @@ import styles from "./UserInformations.module.scss";
 import Hello from "../../components/Hello";
 import CardsList from "../../components/CardsList";
 import PieChart from "../../components/Charts/Pie";
+import BarChart from "../../components/Charts/Bar";
 
 /* API */
 import Api from "../../utils/Api";
@@ -15,13 +16,15 @@ const API = new Api();
 export default function UserInformations() {
 	const { id: userID } = useParams();
 	const [userData, setUserData] = useState(null);
+	const [userDataActivity, setUserDataActivity] = useState(null);
 
 	useEffect(() => {
 		async function fetchData() {
 			try {
 				const userData = await API.getUserData(userID);
+				const userActivity = await API.getUserActivity(userID);
 				setUserData(userData);
-				console.log(userData);
+				setUserDataActivity(userActivity);
 			} catch (error) {
 				console.error(error);
 			}
@@ -69,6 +72,7 @@ export default function UserInformations() {
 							]}
 						/>
 						<PieChart score={userData.todayScore || userData.score} />
+						<BarChart userDataActivity={userDataActivity} />
 					</div>
 				</div>
 			)}

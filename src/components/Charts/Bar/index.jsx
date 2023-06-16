@@ -2,44 +2,6 @@ import React, { PureComponent } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import styles from "./Bar.module.scss";
 
-const data = [
-	{
-		name: "1",
-		weight: 68,
-		kcal: 350,
-	},
-	{
-		name: "2",
-		weight: 70,
-		kcal: 400,
-	},
-	{
-		name: "3",
-		weight: 64,
-		kcal: 250,
-	},
-	{
-		name: "4",
-		weight: 63,
-		kcal: 500,
-	},
-	{
-		name: "5",
-		weight: 65,
-		kcal: 300,
-	},
-	{
-		name: "6",
-		weight: 62,
-		kcal: 350,
-	},
-	{
-		name: "7",
-		weight: 61,
-		kcal: 250,
-	},
-];
-
 class CustomizedAxisTick extends PureComponent {
 	render() {
 		const { x, y, payload } = this.props;
@@ -74,6 +36,46 @@ class CustomTooltip extends React.Component {
 
 export default class Example extends PureComponent {
 	render() {
+		const { userDataActivity } = this.props;
+
+		const data = [
+			{
+				name: "1",
+				weight: userDataActivity.sessions[0].kilogram,
+				kcal: userDataActivity.sessions[0].calories,
+			},
+			{
+				name: "2",
+				weight: userDataActivity.sessions[1].kilogram,
+				kcal: userDataActivity.sessions[1].calories,
+			},
+			{
+				name: "3",
+				weight: userDataActivity.sessions[2].kilogram,
+				kcal: userDataActivity.sessions[2].calories,
+			},
+			{
+				name: "4",
+				weight: userDataActivity.sessions[3].kilogram,
+				kcal: userDataActivity.sessions[3].calories,
+			},
+			{
+				name: "5",
+				weight: userDataActivity.sessions[4].kilogram,
+				kcal: userDataActivity.sessions[4].calories,
+			},
+			{
+				name: "6",
+				weight: userDataActivity.sessions[5].kilogram,
+				kcal: userDataActivity.sessions[5].calories,
+			},
+			{
+				name: "7",
+				weight: userDataActivity.sessions[6].kilogram,
+				kcal: userDataActivity.sessions[6].calories,
+			},
+		];
+
 		return (
 			<BarChart
 				width={835}
