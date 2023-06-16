@@ -38,43 +38,11 @@ export default class Example extends PureComponent {
 	render() {
 		const { userDataActivity } = this.props;
 
-		const data = [
-			{
-				name: "1",
-				weight: userDataActivity.sessions[0].kilogram,
-				kcal: userDataActivity.sessions[0].calories,
-			},
-			{
-				name: "2",
-				weight: userDataActivity.sessions[1].kilogram,
-				kcal: userDataActivity.sessions[1].calories,
-			},
-			{
-				name: "3",
-				weight: userDataActivity.sessions[2].kilogram,
-				kcal: userDataActivity.sessions[2].calories,
-			},
-			{
-				name: "4",
-				weight: userDataActivity.sessions[3].kilogram,
-				kcal: userDataActivity.sessions[3].calories,
-			},
-			{
-				name: "5",
-				weight: userDataActivity.sessions[4].kilogram,
-				kcal: userDataActivity.sessions[4].calories,
-			},
-			{
-				name: "6",
-				weight: userDataActivity.sessions[5].kilogram,
-				kcal: userDataActivity.sessions[5].calories,
-			},
-			{
-				name: "7",
-				weight: userDataActivity.sessions[6].kilogram,
-				kcal: userDataActivity.sessions[6].calories,
-			},
-		];
+		const data = userDataActivity.sessions.map((session, index) => ({
+			name: (index + 1).toString(),
+			weight: session.kilogram,
+			kcal: session.calories,
+		}));
 
 		return (
 			<BarChart
