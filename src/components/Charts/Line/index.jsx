@@ -59,11 +59,8 @@ export default class Example extends PureComponent {
 			{
 				day: null,
 				time:
-					userAverageSessions.sessions[0].sessionLength < userAverageSessions.sessions[1].sessionLength
-						? userAverageSessions.sessions[0].sessionLength -
-						  (userAverageSessions.sessions[1].sessionLength - userAverageSessions.sessions[0].sessionLength)
-						: userAverageSessions.sessions[1].sessionLength +
-						  (userAverageSessions.sessions[1].sessionLength - userAverageSessions.sessions[0].sessionLength),
+					userAverageSessions.sessions[0].sessionLength +
+					(userAverageSessions.sessions[1].sessionLength - userAverageSessions.sessions[0].sessionLength) / 2,
 			},
 			{
 				day: "L",
@@ -96,13 +93,11 @@ export default class Example extends PureComponent {
 			{
 				day: null,
 				time:
-					userAverageSessions.sessions[6].sessionLength < userAverageSessions.sessions[5].sessionLength
-						? userAverageSessions.sessions[6].sessionLength +
-						  (userAverageSessions.sessions[6].sessionLength - userAverageSessions.sessions[5].sessionLength)
-						: userAverageSessions.sessions[6].sessionLength -
-						  (userAverageSessions.sessions[5].sessionLength - userAverageSessions.sessions[6].sessionLength),
+					userAverageSessions.sessions[6].sessionLength +
+					(userAverageSessions.sessions[5].sessionLength - userAverageSessions.sessions[6].sessionLength) / 2,
 			},
 		];
+
 		return (
 			<LineChart width={260} height={260} data={data} className={styles.chart} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
 				<text x={30} y={30} fill="#ffffff50" textAnchor="start" dominantBaseline="central">
