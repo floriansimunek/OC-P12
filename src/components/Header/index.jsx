@@ -11,7 +11,7 @@ export default function Header() {
 			</div>
 			<ul className={styles.nav}>
 				<li className={styles.nav_item}>
-					<Link to="#" className={styles.nav_item_link}>
+					<Link to="/" className={styles.nav_item_link}>
 						Accueil
 					</Link>
 				</li>
