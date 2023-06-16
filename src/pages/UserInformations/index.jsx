@@ -23,25 +23,25 @@ export default function UserInformations() {
 	const [userPerformance, setUserPerformance] = useState(null);
 
 	useEffect(() => {
+		async function fetchData() {
+			try {
+				const [userData, userActivity, userAverageSessions, userPerformance] = await Promise.all([
+					API.getUserData(userID),
+					API.getUserActivity(userID),
+					API.getUserAverageSessions(userID),
+					API.getUserPerformance(userID),
+				]);
+				setUserData(userData);
+				setUserDataActivity(userActivity);
+				setUserAverageSessions(userAverageSessions);
+				setUserPerformance(userPerformance);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
 		fetchData();
 	}, [userID]);
-
-	async function fetchData() {
-		try {
-			const [userData, userActivity, userAverageSessions, userPerformance] = await Promise.all([
-				API.getUserData(userID),
-				API.getUserActivity(userID),
-				API.getUserAverageSessions(userID),
-				API.getUserPerformance(userID),
-			]);
-			setUserData(userData);
-			setUserDataActivity(userActivity);
-			setUserAverageSessions(userAverageSessions);
-			setUserPerformance(userPerformance);
-		} catch (error) {
-			console.error(error);
-		}
-	}
 
 	return (
 		<>

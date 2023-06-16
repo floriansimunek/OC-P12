@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Legend } from "recharts";
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 import styles from "./Radar.module.scss";
 
 export default class Example extends PureComponent {
