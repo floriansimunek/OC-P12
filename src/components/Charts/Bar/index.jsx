@@ -44,8 +44,8 @@ export default class Example extends PureComponent {
 			kcal: session.calories,
 		}));
 
-		const maxWeight = Math.max(...userDataActivity.sessions.map((session) => session.kilogram));
-		const minWeight = Math.min(...userDataActivity.sessions.map((session) => session.kilogram));
+		const maxWeight = Math.max(...data.map((session) => session.weight));
+		const minWeight = Math.min(...data.map((session) => session.weight));
 		const deltaWeight = maxWeight - minWeight + 3;
 
 		return (

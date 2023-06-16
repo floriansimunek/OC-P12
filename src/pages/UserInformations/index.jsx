@@ -11,9 +11,7 @@ import LineChart from "../../components/Charts/Line";
 import RadarChart from "../../components/Charts/Radar";
 
 /* API */
-import Api from "../../utils/Api";
-
-const API = new Api();
+import UserService from "../../utils/Services/UserService";
 
 export default function UserInformations() {
 	const { id: userID } = useParams();
@@ -26,10 +24,10 @@ export default function UserInformations() {
 		async function fetchData() {
 			try {
 				const [userData, userActivity, userAverageSessions, userPerformance] = await Promise.all([
-					API.getUserData(userID),
-					API.getUserActivity(userID),
-					API.getUserAverageSessions(userID),
-					API.getUserPerformance(userID),
+					UserService.getUserData(userID),
+					UserService.getUserActivity(userID),
+					UserService.getUserAverageSessions(userID),
+					UserService.getUserPerformance(userID),
 				]);
 				setUserData(userData);
 				setUserDataActivity(userActivity);
