@@ -47,42 +47,50 @@ export default function UserInformations() {
 				<div>
 					<Hello userData={userData} />
 					<div className={styles.datas}>
-						<CardsList
-							cards={[
-								{
-									type: "energy",
-									number: userData.keyData.calorieCount,
-									unity: "kCal",
-									name: "Calories",
-									color: "#ff0000",
-								},
-								{
-									type: "chicken",
-									number: userData.keyData.proteinCount,
-									unity: "g",
-									name: "Proteines",
-									color: "#4ab8ff",
-								},
-								{
-									type: "apple",
-									number: userData.keyData.carbohydrateCount,
-									unity: "g",
-									name: "Glucides",
-									color: "#fdcc0c",
-								},
-								{
-									type: "cheeseburger",
-									number: userData.keyData.lipidCount,
-									unity: "g",
-									name: "Lipides",
-									color: "#fd5181",
-								},
-							]}
-						/>
-						<PieChart score={userData.todayScore || userData.score} />
-						<BarChart userDataActivity={userDataActivity} />
-						<LineChart userAverageSessions={userAverageSessions} />
-						<RadarChart userPerformance={userPerformance} />
+						<div className={styles.left}>
+							<div className={styles.top}>
+								<BarChart userDataActivity={userDataActivity} />
+							</div>
+							<div className={styles.bot}>
+								<LineChart userAverageSessions={userAverageSessions} />
+								<RadarChart userPerformance={userPerformance} />
+								<PieChart score={userData.todayScore || userData.score} />
+							</div>
+						</div>
+						<div className={styles.right}>
+							<CardsList
+								cards={[
+									{
+										type: "energy",
+										number: userData.keyData.calorieCount,
+										unity: "kCal",
+										name: "Calories",
+										color: "#ff0000",
+									},
+									{
+										type: "chicken",
+										number: userData.keyData.proteinCount,
+										unity: "g",
+										name: "Proteines",
+										color: "#4ab8ff",
+									},
+									{
+										type: "apple",
+										number: userData.keyData.carbohydrateCount,
+										unity: "g",
+										name: "Glucides",
+										color: "#fdcc0c",
+									},
+									{
+										type: "cheeseburger",
+										number: userData.keyData.lipidCount,
+										unity: "g",
+										name: "Lipides",
+										color: "#fd5181",
+									},
+								]}
+							/>
+						</div>
 					</div>
 				</div>
 			)}
