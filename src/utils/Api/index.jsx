@@ -15,4 +15,12 @@ export default class Api {
 	getTodayScore() {
 		return this.userData.todayScore * 100;
 	}
+
+	getFirstname() {
+		return this.userData.userInfos.firstName;
+	}
+
+	getLastname() {
+		return this.userData.userInfos.lastName;
+	}
 }
