@@ -24,39 +24,22 @@ export default class Example extends PureComponent {
 
 	render() {
 		const { userPerformance } = this.props;
+		const kind = {
+			1: "Cardio",
+			2: "Energie",
+			3: "Endurance",
+			4: "Force",
+			5: "Vitesse",
+			6: "Intensité",
+		};
 
-		const data = [
-			{
-				subject: "Intensité",
-				A: userPerformance.data[5].value,
+		const data = Object.values(kind)
+			.map((subject, index) => ({
+				subject,
+				A: userPerformance.data[index].value,
 				fullMark: 100,
-			},
-			{
-				subject: "Vitesse",
-				A: userPerformance.data[4].value,
-				fullMark: 100,
-			},
-			{
-				subject: "Force",
-				A: userPerformance.data[3].value,
-				fullMark: 100,
-			},
-			{
-				subject: "Endurance",
-				A: userPerformance.data[2].value,
-				fullMark: 100,
-			},
-			{
-				subject: "Energie",
-				A: userPerformance.data[1].value,
-				fullMark: 100,
-			},
-			{
-				subject: "Cardio",
-				A: userPerformance.data[0].value,
-				fullMark: 100,
-			},
-		];
+			}))
+			.reverse();
 
 		return (
 			<div className={styles.chart}>
