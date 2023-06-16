@@ -44,6 +44,10 @@ export default class Example extends PureComponent {
 			kcal: session.calories,
 		}));
 
+		const maxWeight = Math.max(...userDataActivity.sessions.map((session) => session.kilogram));
+		const minWeight = Math.min(...userDataActivity.sessions.map((session) => session.kilogram));
+		const deltaWeight = maxWeight - minWeight + 3;
+
 		return (
 			<BarChart
 				width={835}
@@ -66,21 +70,22 @@ export default class Example extends PureComponent {
 					yAxisId="weightAxis"
 					orientation="right"
 					dataKey="weight"
-					tickCount={3}
+					tickCount={deltaWeight}
 					tickLine={false}
 					axisLine={false}
 					tick={<CustomizedAxisTick />}
 					tickMargin={32}
+					domain={["dataMin - 1", "dataMax + 1"]}
 				/>
 				<YAxis
 					yAxisId="kcalAxis"
 					orientation="left"
 					dataKey="kcal"
-					tickCount={3}
 					tickLine={false}
 					axisLine={false}
 					tick={<CustomizedAxisTick />}
 					tickMargin={32}
+					domain={["dataMin - 100", "dataMax + 100"]}
 					hide
 				/>
 				<Legend
