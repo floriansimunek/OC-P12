@@ -23,4 +23,8 @@ export default class Api {
 	getLastname() {
 		return this.userData.userInfos.lastName;
 	}
+
+	getAge() {
+		return this.userData.userInfos.age;
+	}
 }
