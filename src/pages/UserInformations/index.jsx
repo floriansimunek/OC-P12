@@ -5,6 +5,7 @@ import styles from "./UserInformations.module.scss";
 /* COMPONENTS */
 import Hello from "../../components/Hello";
 import CardsList from "../../components/CardsList";
+import PieChart from "../../components/Charts/Pie";
 
 /* API */
 import Api from "../../utils/Api";
@@ -67,6 +68,7 @@ export default function UserInformations() {
 								},
 							]}
 						/>
+						<PieChart score={userData.todayScore || userData.score} />
 					</div>
 				</div>
 			)}
