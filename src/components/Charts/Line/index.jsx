@@ -2,45 +2,6 @@ import React, { PureComponent } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Dot, Rectangle } from "recharts";
 import styles from "./Line.module.scss";
 
-const data = [
-	{
-		day: null,
-		time: 30 < 20 ? 30 - (20 - 30) : 20 + (20 - 30),
-	},
-	{
-		day: "L",
-		time: 30,
-	},
-	{
-		day: "M",
-		time: 20,
-	},
-	{
-		day: "M",
-		time: 64,
-	},
-	{
-		day: "J",
-		time: 39,
-	},
-	{
-		day: "V",
-		time: 5,
-	},
-	{
-		day: "S",
-		time: 18,
-	},
-	{
-		day: "D",
-		time: 35,
-	},
-	{
-		day: null,
-		time: 35 < 18 ? 35 + (35 - 18) : 35 - (18 - 35),
-	},
-];
-
 class CustomizedAxisTick extends PureComponent {
 	render() {
 		const { x, y, payload } = this.props;
@@ -78,7 +39,7 @@ class CustomTooltip extends React.Component {
 
 class CustomDot extends React.Component {
 	render() {
-		const { cx, cy, index } = this.props;
+		const { cx, cy, index, data } = this.props;
 		if (index === 0 || index === data.length - 1) {
 			return null;
 		}
@@ -93,6 +54,55 @@ const CustomCursor = ({ points, width }) => {
 
 export default class Example extends PureComponent {
 	render() {
+		const { userAverageSessions } = this.props;
+		const data = [
+			{
+				day: null,
+				time:
+					userAverageSessions.sessions[0].sessionLength < userAverageSessions.sessions[1].sessionLength
+						? userAverageSessions.sessions[0].sessionLength -
+						  (userAverageSessions.sessions[1].sessionLength - userAverageSessions.sessions[0].sessionLength)
+						: userAverageSessions.sessions[1].sessionLength +
+						  (userAverageSessions.sessions[1].sessionLength - userAverageSessions.sessions[0].sessionLength),
+			},
+			{
+				day: "L",
+				time: userAverageSessions.sessions[0].sessionLength,
+			},
+			{
+				day: "M",
+				time: userAverageSessions.sessions[1].sessionLength,
+			},
+			{
+				day: "M",
+				time: userAverageSessions.sessions[2].sessionLength,
+			},
+			{
+				day: "J",
+				time: userAverageSessions.sessions[3].sessionLength,
+			},
+			{
+				day: "V",
+				time: userAverageSessions.sessions[4].sessionLength,
+			},
+			{
+				day: "S",
+				time: userAverageSessions.sessions[5].sessionLength,
+			},
+			{
+				day: "D",
+				time: userAverageSessions.sessions[6].sessionLength,
+			},
+			{
+				day: null,
+				time:
+					userAverageSessions.sessions[6].sessionLength < userAverageSessions.sessions[5].sessionLength
+						? userAverageSessions.sessions[6].sessionLength +
+						  (userAverageSessions.sessions[6].sessionLength - userAverageSessions.sessions[5].sessionLength)
+						: userAverageSessions.sessions[6].sessionLength -
+						  (userAverageSessions.sessions[5].sessionLength - userAverageSessions.sessions[6].sessionLength),
+			},
+		];
 		return (
 			<LineChart width={260} height={260} data={data} className={styles.chart} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
 				<text x={30} y={30} fill="#ffffff50" textAnchor="start" dominantBaseline="central">
@@ -112,7 +122,7 @@ export default class Example extends PureComponent {
 				/>
 				<YAxis dataKey="time" type="number" domain={["dataMin", "dataMax + 60"]} hide />
 				<Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
-				<Line type="natural" dataKey="time" stroke="url(#gradient)" strokeWidth={3} dot={false} activeDot={<CustomDot />} />
+				<Line type="natural" dataKey="time" stroke="url(#gradient)" strokeWidth={3} dot={false} activeDot={<CustomDot data={data} />} />
 				<defs>
 					<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
 						<stop offset="0%" stopColor="#ffffff40" />

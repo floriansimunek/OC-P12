@@ -21,7 +21,7 @@ export default class Api {
 		const url = `${this.baseUrl}/user/${userId}/average-sessions`;
 		const response = await fetch(url);
 		const data = await response.json();
-		return data;
+		return data.data;
 	}
 
 	async getUserPerformance(userId) {

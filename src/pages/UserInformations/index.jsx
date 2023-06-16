@@ -7,6 +7,7 @@ import Hello from "../../components/Hello";
 import CardsList from "../../components/CardsList";
 import PieChart from "../../components/Charts/Pie";
 import BarChart from "../../components/Charts/Bar";
+import LineChart from "../../components/Charts/Line";
 
 /* API */
 import Api from "../../utils/Api";
@@ -17,14 +18,18 @@ export default function UserInformations() {
 	const { id: userID } = useParams();
 	const [userData, setUserData] = useState(null);
 	const [userDataActivity, setUserDataActivity] = useState(null);
+	const [userAverageSessions, setUserAverageSessions] = useState(null);
 
 	useEffect(() => {
 		async function fetchData() {
 			try {
 				const userData = await API.getUserData(userID);
 				const userActivity = await API.getUserActivity(userID);
+				const userAverageSessions = await API.getUserAverageSessions(userID);
 				setUserData(userData);
 				setUserDataActivity(userActivity);
+				console.log(userAverageSessions);
+				setUserAverageSessions(userAverageSessions);
 			} catch (error) {
 				console.error(error);
 			}
@@ -73,6 +78,7 @@ export default function UserInformations() {
 						/>
 						<PieChart score={userData.todayScore || userData.score} />
 						<BarChart userDataActivity={userDataActivity} />
+						<LineChart userAverageSessions={userAverageSessions} />
 					</div>
 				</div>
 			)}
