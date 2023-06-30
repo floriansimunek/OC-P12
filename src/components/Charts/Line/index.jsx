@@ -55,19 +55,7 @@ const CustomCursor = ({ points, width }) => {
 export default class Example extends PureComponent {
 	render() {
 		const { userAverageSessions } = this.props;
-
-		const parsedDatas = userAverageSessions.sessions.map((session) => session.sessionLength);
-		const daysOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
-
-		const data = daysOfWeek.map((day, index) => ({
-			day,
-			time: parsedDatas[index],
-		}));
-
-		const [monday, tuesday, , , , saturday, sunday] = data;
-
-		data.unshift({ day: null, time: monday.time + (tuesday.time - monday.time) / 2 });
-		data.push({ day: null, time: saturday.time + (sunday.time - saturday.time) / 2 });
+		const data = userAverageSessions.averageSessions;
 
 		return (
 			<LineChart width={260} height={260} data={data} className={styles.chart} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
@@ -78,7 +66,7 @@ export default class Example extends PureComponent {
 					</tspan>
 				</text>
 				<XAxis
-					dataKey="day"
+					dataKey="dayOfWeek"
 					height={60}
 					tick={<CustomizedAxisTick />}
 					tickLine={false}
@@ -86,9 +74,16 @@ export default class Example extends PureComponent {
 					tickMargin={32}
 					interval="preserveStartEnd"
 				/>
-				<YAxis dataKey="time" type="number" domain={["dataMin", "dataMax + 60"]} hide />
+				<YAxis dataKey="sessionLength" type="number" domain={["dataMin", "dataMax + 60"]} hide />
 				<Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
-				<Line type="natural" dataKey="time" stroke="url(#gradient)" strokeWidth={3} dot={false} activeDot={<CustomDot data={data} />} />
+				<Line
+					type="natural"
+					dataKey="sessionLength"
+					stroke="url(#gradient)"
+					strokeWidth={3}
+					dot={false}
+					activeDot={<CustomDot data={data} />}
+				/>
 				<defs>
 					<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
 						<stop offset="0%" stopColor="#ffffff40" />

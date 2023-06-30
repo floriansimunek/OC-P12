@@ -24,30 +24,15 @@ export default class Example extends PureComponent {
 
 	render() {
 		const { userPerformance } = this.props;
-		const kind = {
-			1: "Cardio",
-			2: "Energie",
-			3: "Endurance",
-			4: "Force",
-			5: "Vitesse",
-			6: "Intensité",
-		};
-
-		const data = Object.values(kind)
-			.map((subject, index) => ({
-				subject,
-				A: userPerformance.data[index].value,
-				fullMark: 100,
-			}))
-			.reverse();
+		const data = userPerformance.performances;
 
 		return (
 			<div className={styles.chart}>
 				<ResponsiveContainer width="100%" height="100%">
 					<RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
 						<PolarGrid />
-						<PolarAngleAxis tick={this.customTick} dataKey="subject" />
-						<Radar name="Stats" dataKey="A" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
+						<PolarAngleAxis tick={this.customTick} dataKey="kind" />
+						<Radar name="Stats" dataKey="value" stroke="#FF0101" fill="#FF0101" fillOpacity={0.7} />
 					</RadarChart>
 				</ResponsiveContainer>
 			</div>

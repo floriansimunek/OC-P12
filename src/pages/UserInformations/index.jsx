@@ -11,7 +11,7 @@ import LineChart from "../../components/Charts/Line";
 import RadarChart from "../../components/Charts/Radar";
 
 /* API */
-import UserService from "../../utils/Services/UserService";
+import UserService from "../../services/UserService";
 
 export default function UserInformations() {
 	const { id: userID } = useParams();
@@ -54,7 +54,7 @@ export default function UserInformations() {
 							<div className={styles.bot}>
 								<LineChart userAverageSessions={userAverageSessions} />
 								<RadarChart userPerformance={userPerformance} />
-								<PieChart score={userData.todayScore || userData.score} />
+								<PieChart score={userData.score} />
 							</div>
 						</div>
 						<div className={styles.right}>
@@ -62,28 +62,28 @@ export default function UserInformations() {
 								cards={[
 									{
 										type: "energy",
-										number: userData.keyData.calorieCount,
+										number: userData.calorieCount,
 										unity: "kCal",
 										name: "Calories",
 										color: "#ff0000",
 									},
 									{
 										type: "chicken",
-										number: userData.keyData.proteinCount,
+										number: userData.proteinCount,
 										unity: "g",
 										name: "Proteines",
 										color: "#4ab8ff",
 									},
 									{
 										type: "apple",
-										number: userData.keyData.carbohydrateCount,
+										number: userData.carbohydrateCount,
 										unity: "g",
 										name: "Glucides",
 										color: "#fdcc0c",
 									},
 									{
 										type: "cheeseburger",
-										number: userData.keyData.lipidCount,
+										number: userData.lipidCount,
 										unity: "g",
 										name: "Lipides",
 										color: "#fd5181",
