@@ -1,4 +1,5 @@
 import Service from "./Service";
+import MockedService from "./MockedService";
 import User from "../entities/User";
 import UserSessionsCollection from "../entities/UserSessionsCollection";
 import UserAverageSessionsCollection from "../entities/UserAverageSessionsCollection";
