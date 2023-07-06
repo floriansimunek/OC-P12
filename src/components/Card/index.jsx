@@ -1,5 +1,5 @@
 import styles from "./Card.module.scss";
-import { ReactComponent as EnergyIcon } from "../../assets/icons/nutrients/energy.svg";
+import { ReactComponent as EnergyIcon } from "@/assets/icons/nutrients/energy.svg";
 import { ReactComponent as ChickenIcon } from "../../assets/icons/nutrients/chicken.svg";
 import { ReactComponent as AppleIcon } from "../../assets/icons/nutrients/apple.svg";
 import { ReactComponent as CheeseburgerIcon } from "../../assets/icons/nutrients/cheeseburger.svg";
@@ -12,8 +12,12 @@ const iconMap = {
 };
 
 export default function Card({ card }) {
+	/**
+	 * @type {React.CSSProperties}
+	 */
 	const cardStyle = {
-		"--card-iconBlock-color": card.color + "10",
+		// @ts-ignore
+		"--card-icon-block-color": card.color + "10",
 		"--card-icon-color": card.color,
 	};
 
