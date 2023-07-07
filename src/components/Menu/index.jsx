@@ -1,6 +1,11 @@
 import styles from "./Menu.module.scss";
 import MenuItem from "../MenuItem";
 
+/**
+ * Menu
+ * @param {Object} icons Object of left menu icons
+ * @returns
+ */
 export default function Menu({ icons }) {
 	return (
 		<aside className={styles.menu}>
