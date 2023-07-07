@@ -3,7 +3,7 @@ import Card from "../Card";
 
 /**
  *
- * @param {Array<Card>} CardsList Array of Card component
+ * @param {Object} CardsList Array of Card component
  * @returns {JSX.Element} CardsList Element
  */
 export default function CardsList({ cards }) {
