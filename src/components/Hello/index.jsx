@@ -1,5 +1,10 @@
 import styles from "./Hello.module.scss";
 
+/**
+ * Hello
+ * @param {Object} userData User data from API or Mock : firstname | lastname
+ * @returns {JSX.Element} Hello element
+ */
 export default function Hello({ userData }) {
 	return (
 		<div className={styles.hello}>
