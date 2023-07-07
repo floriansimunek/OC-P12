@@ -5,7 +5,7 @@ import UserSessionsCollection from "../entities/UserSessionsCollection";
 import UserAverageSessionsCollection from "../entities/UserAverageSessionsCollection";
 import UserPerformancesCollection from "../entities/UserPerformancesCollection";
 
-export default class UserService extends Service {
+export default class UserService extends MockedService {
 	static baseUrl = "http://localhost:1234/user";
 
 	static async getUserData(userId) {

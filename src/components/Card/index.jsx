@@ -11,6 +11,11 @@ const iconMap = {
 	cheeseburger: <CheeseburgerIcon />,
 };
 
+/**
+ *
+ * @param {Object} card Card informations : type | number | unity | name | color
+ * @returns {JSX.Element} Card Element
+ */
 export default function Card({ card }) {
 	/**
 	 * @type {React.CSSProperties}
