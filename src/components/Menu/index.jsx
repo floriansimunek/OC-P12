@@ -4,7 +4,7 @@ import MenuItem from "../MenuItem";
 /**
  * Menu
  * @param {Object} icons Object of left menu icons
- * @returns
+ * @returns {JSX.Element} Left Menu Element
  */
 export default function Menu({ icons }) {
 	return (
