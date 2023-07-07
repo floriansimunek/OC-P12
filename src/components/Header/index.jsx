@@ -2,6 +2,10 @@ import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
+/**
+ *	Header
+ * 	@returns {JSX.Element} Header element
+ */
 export default function Header() {
 	return (
 		<header>
