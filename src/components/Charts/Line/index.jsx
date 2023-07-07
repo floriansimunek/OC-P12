@@ -52,6 +52,9 @@ const CustomCursor = ({ points, width }) => {
 	return <Rectangle fill="#00000010" x={x} width={width} height={260} />;
 };
 
+/**
+ * @returns {JSX.Element} LineChart Element
+ */
 export default class Example extends PureComponent {
 	render() {
 		const { userAverageSessions } = this.props;

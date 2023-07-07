@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 import styles from "./Radar.module.scss";
 
+/**
+ * @returns {JSX.Element} RadarChart Element
+ */
 export default class Example extends PureComponent {
 	customTick({ payload, x, y, cx, cy, textAnchor, stroke, radius }) {
 		return (

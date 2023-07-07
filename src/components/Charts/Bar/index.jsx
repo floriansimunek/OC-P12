@@ -34,6 +34,9 @@ class CustomTooltip extends React.Component {
 	}
 }
 
+/**
+ * @returns {JSX.Element} BarChart Element
+ */
 export default class Example extends PureComponent {
 	render() {
 		const { userDataActivity } = this.props;

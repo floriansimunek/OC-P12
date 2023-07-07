@@ -2,6 +2,9 @@ import React, { PureComponent } from "react";
 import { PieChart, Pie, Cell, Label } from "recharts";
 import styles from "./Pie.module.scss";
 
+/**
+ * @returns {JSX.Element} PieChart Element
+ */
 export default class Example extends PureComponent {
 	render() {
 		const { score } = this.props;
