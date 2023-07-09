@@ -7,6 +7,7 @@ module.exports = {
 				["@assets", "./src/assets"],
 				["@components", "./src/components"],
 				["@mocks", "./src/mocks"],
+				["@entities", "./src/entities"],
 			],
 		},
 	},

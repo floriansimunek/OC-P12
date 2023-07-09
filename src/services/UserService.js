@@ -1,9 +1,9 @@
 import Service from "./Service";
 import MockedService from "./MockedService";
-import User from "../entities/User";
-import UserSessionsCollection from "../entities/UserSessionsCollection";
-import UserAverageSessionsCollection from "../entities/UserAverageSessionsCollection";
-import UserPerformancesCollection from "../entities/UserPerformancesCollection";
+import User from "@entities/User";
+import UserSessionsCollection from "@entities/UserSessionsCollection";
+import UserAverageSessionsCollection from "@entities/UserAverageSessionsCollection";
+import UserPerformancesCollection from "@entities/UserPerformancesCollection";
 
 export default class UserService extends MockedService {
 	static baseUrl = "http://localhost:1234/user";

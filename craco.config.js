@@ -7,6 +7,7 @@ module.exports = {
 			"@assets": path.resolve(__dirname, "src/assets"),
 			"@components": path.resolve(__dirname, "src/components"),
 			"@mocks": path.resolve(__dirname, "src/mocks"),
+			"@entities": path.resolve(__dirname, "src/entities"),
 		},
 	},
 };
