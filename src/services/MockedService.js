@@ -1,4 +1,4 @@
-import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../mocks/UsersData";
+import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "@mocks/UsersData";
 
 export default class MockedService {
 	static async fetchData(path) {

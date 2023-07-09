@@ -6,6 +6,7 @@ module.exports = {
 				["@", "./src/"],
 				["@assets", "./src/assets"],
 				["@components", "./src/components"],
+				["@mocks", "./src/mocks"],
 			],
 		},
 	},
