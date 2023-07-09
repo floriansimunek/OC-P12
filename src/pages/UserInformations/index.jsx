@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import styles from "./UserInformations.module.scss";
 
 /* COMPONENTS */
-import Hello from "../../components/Hello";
-import CardsList from "../../components/CardsList";
-import PieChart from "../../components/Charts/Pie";
-import BarChart from "../../components/Charts/Bar";
-import LineChart from "../../components/Charts/Line";
-import RadarChart from "../../components/Charts/Radar";
+import Hello from "@components/Hello";
+import CardsList from "@components/CardsList";
+import PieChart from "@components/Charts/Pie";
+import BarChart from "@components/Charts/Bar";
+import LineChart from "@components/Charts/Line";
+import RadarChart from "@components/Charts/Radar";
 
 /* API */
 import UserService from "../../services/UserService";

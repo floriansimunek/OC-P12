@@ -8,8 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 
 /* COMPONENTS */
-import Header from "./components/Header";
-import Menu from "./components/Menu";
+import Header from "@components/Header";
+import Menu from "@components/Menu";
 
 /* PAGES */
 import Home from "./pages/Home";
