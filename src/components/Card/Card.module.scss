@@ -8,6 +8,10 @@
 	padding: 0 32px;
 	gap: 25px;
 
+	@media screen and (max-width: 1024px) {
+		width: 80%;
+	}
+
 	.iconBlock {
 		width: 60px;
 		height: 60px;

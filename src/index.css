@@ -6,6 +6,14 @@
 	box-sizing: border-box;
 }
 
+html,
+body,
+#root,
+.App {
+	min-height: 100%;
+	position: relative;
+}
+
 body {
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
 }

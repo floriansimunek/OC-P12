@@ -7,4 +7,10 @@
 	@media screen and (max-width: 1536px) {
 		gap: 20px;
 	}
+
+	@media screen and (max-width: 1024px) {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+	}
 }

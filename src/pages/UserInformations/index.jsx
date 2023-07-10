@@ -44,7 +44,7 @@ export default function UserInformations() {
 	return (
 		<>
 			{userData && (
-				<div>
+				<>
 					<Hello userData={userData} />
 					<div className={styles.datas}>
 						<div className={styles.left}>
@@ -92,7 +92,7 @@ export default function UserInformations() {
 							/>
 						</div>
 					</div>
-				</div>
+				</>
 			)}
 		</>
 	);
