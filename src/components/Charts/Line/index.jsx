@@ -28,7 +28,7 @@ class CustomTooltip extends React.Component {
 
 			return (
 				<div className={styles.tooltip}>
-					<p>{data.time + " min"}</p>
+					<p>{data.sessionLength + " min"}</p>
 				</div>
 			);
 		}
@@ -81,7 +81,7 @@ export default class Example extends PureComponent {
 				<Tooltip content={<CustomTooltip />} cursor={<CustomCursor />} />
 				<Line
 					type="natural"
-					dataKey="sessionLength"
+					dataKey={"sessionLength"}
 					stroke="url(#gradient)"
 					strokeWidth={3}
 					dot={false}
