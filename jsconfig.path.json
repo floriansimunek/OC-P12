@@ -3,10 +3,10 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],
-			"@/assets/*": ["./src/assets/*"],
-			"@/components/*": ["./src/components/*"],
-			"@/mocks/*": ["./src/mocks/*"],
-			"@/entities/*": ["./src/entities/*"]
+			"@assets/*": ["./src/assets/*"],
+			"@components/*": ["./src/components/*"],
+			"@mocks/*": ["./src/mocks/*"],
+			"@entities/*": ["./src/entities/*"]
 		}
 	}
 }
