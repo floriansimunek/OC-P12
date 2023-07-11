@@ -1,3 +1,7 @@
+/**
+ * Service
+ * @returns fetched datas from url
+ */
 export default class Service {
 	static baseUrl = "";
 
