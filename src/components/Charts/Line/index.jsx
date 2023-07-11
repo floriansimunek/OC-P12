@@ -1,6 +1,13 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, Dot, Rectangle } from "recharts";
 import styles from "./Line.module.scss";
 
+/**
+ * Customized Axis Tick component for the chart
+ * @param {number} props.x x-coordinate for the tick
+ * @param {number} props.y y-coordinate for the tick
+ * @param {object} payload payload for the kick
+ * @returns {JSX.Element} rendered customized axis ticks
+ */
 const CustomizedAxisTick = ({ x, y, payload }) => (
 	<g transform={`translate(${x},${y})`}>
 		<text x={0} y={0} textAnchor="middle" className={styles.XAxisText}>
@@ -9,6 +16,12 @@ const CustomizedAxisTick = ({ x, y, payload }) => (
 	</g>
 );
 
+/**
+ * Custom Tooltip component for the chart
+ * @param {boolean} active - Indicates if the tooltip is active
+ * @param {object} payload - The payload for the tooltip
+ * @returns {JSX.Element|null} The rendered component, or null if not active
+ */
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload && payload.length) {
 		const data = payload[0].payload;
@@ -27,6 +40,14 @@ const CustomTooltip = ({ active, payload }) => {
 	return null;
 };
 
+/**
+ * Custom Dot component for the chart
+ * @param {number} props.cx x-coordinate for the dot
+ * @param {number} props.cy y-coordinate for the dot
+ * @param {number} props.index index of the dot.
+ * @param {Array} props.data data array for the dots
+ * @returns {JSX.Element|null} The rendered component, or null for specific indices.
+ */
 const CustomDot = ({ cx, cy, index, data }) => {
 	if (index === 0 || index === data.length - 1) {
 		return null;
@@ -34,11 +55,22 @@ const CustomDot = ({ cx, cy, index, data }) => {
 	return <Dot cx={cx} cy={cy} fill="#fff" r={4} stroke="#ffffff50" strokeWidth={10} />;
 };
 
+/**
+ * Custom Cursor component for the chart
+ * @param {Array} props.points - The points array for the cursor
+ * @param {number} props.width - The width of the cursor
+ * @returns {JSX.Element} The rendered component
+ */
 const CustomCursor = ({ points, width }) => {
 	const { x } = points[0];
 	return <Rectangle fill="#00000010" x={x} width={width} height={260} />;
 };
 
+/**
+ * Line Chart component for displaying user average sessions
+ * @param {object} props.userAverageSessions - The user's average sessions data
+ * @returns {JSX.Element} The rendered component
+ */
 export default function LineChartComponent({ userAverageSessions }) {
 	const data = userAverageSessions.averageSessions;
 
