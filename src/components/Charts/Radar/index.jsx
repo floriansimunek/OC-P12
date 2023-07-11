@@ -2,6 +2,18 @@ import React from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 import styles from "./Radar.module.scss";
 
+/**
+ * Custom tick component for the polar angle axis
+ * @param {object} props.payload - The payload for the tick
+ * @param {number} props.x - The x-coordinate for the tick
+ * @param {number} props.y - The y-coordinate for the tick
+ * @param {number} props.cx - The x-coordinate for the center of the chart
+ * @param {number} props.cy - The y-coordinate for the center of the chart
+ * @param {string} props.textAnchor - The text anchor for the tick
+ * @param {string} props.stroke - The stroke color for the tick
+ * @param {number} props.radius - The radius of the chart
+ * @returns {JSX.Element} The rendered component
+ */
 const customTick = ({ payload, x, y, cx, cy, textAnchor, stroke, radius }) => (
 	<g className="recharts-layer recharts-polar-angle-axis-tick">
 		<text
@@ -19,6 +31,11 @@ const customTick = ({ payload, x, y, cx, cy, textAnchor, stroke, radius }) => (
 	</g>
 );
 
+/**
+ * Radar Chart component for displaying user's performance
+ * @param {object} props.userPerformance - The user's performance data
+ * @returns {JSX.Element} The rendered component
+ */
 export default function RadarChartComponent({ userPerformance }) {
 	const data = userPerformance.performances;
 
