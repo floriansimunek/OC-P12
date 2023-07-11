@@ -1,14 +1,26 @@
 import UserPerformance from "./UserPerformance";
 
+/**
+ * Collection of UserPerformance
+ */
 export default class UserPerformancesCollection {
 	performances = [];
 	userId = null;
 
+	/**
+	 *
+	 * @param {object} performancesData user performance data
+	 */
 	constructor(performancesData) {
 		this.userId = performancesData.userId;
 		this.performances = this.parsedData(performancesData);
 	}
 
+	/**
+	 *
+	 * @param {object} data get user performances data
+	 * @returns {object} parsedData of the user performances data
+	 */
 	parsedData(data) {
 		const kind = {
 			0: "Cardio",
