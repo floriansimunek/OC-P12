@@ -1,3 +1,6 @@
+/**
+ * Represents a user
+ */
 export default class User {
 	id;
 
@@ -12,6 +15,10 @@ export default class User {
 	carbohydrateCount;
 	lipidCount;
 
+	/**
+	 * Créer une nouvelle instance de User
+	 * @param {object} userData - User datas object
+	 */
 	constructor(userData) {
 		this.id = userData.id;
 
