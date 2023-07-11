@@ -1,14 +1,27 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 import styles from "./Bar.module.scss";
 
-const CustomizedAxisTick = ({ x, y, payload }) => (
+/**
+ * Customized Axis Tick component for the chart
+ * @param {number} props.x x-coordinate for the tick
+ * @param {number} props.y y-coordinate for the tick
+ * @param {object} payload payload for the kick
+ * @returns {JSX.Element} rendered customized axis ticks
+ */
+const CustomizedAxisTick = ({ x, y, payload }) => {
 	<g transform={`translate(${x},${y})`}>
 		<text x={0} y={0} textAnchor="middle" className={styles.XAxisText}>
 			{payload.value}
 		</text>
-	</g>
-);
+	</g>;
+};
 
+/**
+ * Custom Tooltip component for the chart
+ * @param {boolean} active - Indicates if the tooltip is active
+ * @param {object} payload - The payload for the tooltip
+ * @returns {JSX.Element|null} The rendered component, or null if not active
+ */
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload && payload.length) {
 		const data = payload[0].payload;
@@ -24,6 +37,11 @@ const CustomTooltip = ({ active, payload }) => {
 	return null;
 };
 
+/**
+ * Bar Chart component for displaying user activity
+ * @param {object} userDataActivity - The user's activity data
+ * @returns {JSX.Element} The rendered component
+ */
 export default function BarChartComponent({ userDataActivity }) {
 	const data = userDataActivity.sessions.map((session, index) => ({
 		name: (index + 1).toString(),
