@@ -1,6 +1,11 @@
 import { PieChart, Pie, Cell, Label } from "recharts";
 import styles from "./Pie.module.scss";
 
+/**
+ * Pie Chart component for displaying user's score
+ * @param {number} props.score - The user's score
+ * @returns {JSX.Element} The rendered component
+ */
 export default function PieChartComponent({ score }) {
 	const data = [{ name: "", value: 1 }];
 	const COLORS = ["#ff0101"];
